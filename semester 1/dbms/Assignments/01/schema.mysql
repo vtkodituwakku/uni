@@ -1,0 +1,58 @@
+/* Table to store all customer related information */
+CREATE TABLE Customer(
+  ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  FName VARCHAR(100) NOT NULL,
+  LName VARCHAR(100) NOT NULL,
+  Address VARCHAR(255),
+  Phone VARCHAR(100),
+  PRIMARY KEY (ID)
+);
+
+/* Table to store all the Artist related information */
+CREATE TABLE Artist (
+  ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  FName VARCHAR(100) NOT NULL,
+  LName VARCHAR(100) NOT NULL,
+  Country VARCHAR(100) NOT NULL,
+  Dob DATE NOT NULL,
+  PRIMARY KEY (ID)
+);
+
+/* Table to store all the painting related information */
+CREATE TABLE Painting (
+  ID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  ArtistID INT NOT NULL,
+  Name VARCHAR(150) NOT NULL,
+  Type VARCHAR(20) NOT NULL,
+  Medium ENUM('WaterColors', 'Chalk', 'Collage', 'SprayPaint') NOT NULL,
+  CreatedOn DATE NOT NULL,
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ArtistID) REFERENCES Artist(ID)
+);
+
+/* Table to store the purchases of paintings from the gallery */
+/* from customers */
+CREATE TABLE Purchases(
+  PurchaseID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  CustomerID INT NOT NULL,
+  PaintingID INT NOT NULL,
+  Price FLOAT NOT NULL,
+  Date DATE NOT NULL,
+  PRIMARY KEY (PurchaseID),
+  FOREIGN KEY (CustomerID) REFERENCES Customer(ID),
+  FOREIGN KEY (PaintingID) REFERENCES Painting(ID)
+);
+
+/* Table to store the purchases from the Gallery of Artwork */
+/* from customers */
+CREATE TABLE Sales(
+  SalesID INT NOT NULL UNIQUE AUTO_INCREMENT,
+  CustomerID INT NOT NULL,
+  PaintingID INT NOT NULL,
+  Price FLOAT NOT NULL,
+  Date DATE NOT NULL,
+  PRIMARY KEY (SalesID),
+  FOREIGN KEY (CustomerID) REFERENCES Customer(ID),
+  FOREIGN KEY (PaintingID) REFERENCES Painting(ID)
+);
+

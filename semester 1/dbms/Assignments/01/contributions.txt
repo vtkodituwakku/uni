@@ -1,0 +1,18 @@
+Student contributions to the project
+
+ER diagram:
+
+M.S.I Peiris - 27242
+H.D.R.D Viduranga - 28527
+
+
+Relational Schema:
+
+G.H.C Bandara - 26912
+C.R pilapitiya - 24746
+
+
+mySQL database:
+
+Vinuka Kodituwakku - 27298
+Kavidu Dilshan - 28511

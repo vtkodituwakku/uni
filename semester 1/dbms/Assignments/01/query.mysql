@@ -1,0 +1,55 @@
+/* Lets enter the given data in the Bill to the database */
+INSERT INTO Artist (ID, FName, LName, Country, Dob) VALUES
+(03, 'Carol', 'Channing', 'USA', '1995-08-02'),
+(15, 'Dennis', 'Frings', 'USA', '1995-02-22');
+
+INSERT INTO Painting(ID, ArtistID, Name, Type, Medium, CreatedOn) VALUES
+(50, 03, 'Laugh with Teeth', 'Canvas', 'WaterColors', '2018-01-02'),
+(65, 15, 'South toward Emerald Sea', 'Canvas', 'WaterColors', '2019-03-02'),
+(43, 03, 'At the Movie', 'Canvas', 'WaterColors', '2019-04-22');
+
+INSERT INTO Customer (ID, FName, LName, Address, Phone) VALUES
+(10, 'Jackson', 'Elizabeth', '123 – 4th Avenue, Fonthill, ON, L3J 4S4', '(206) 284-6783');
+
+INSERT INTO Purchases (CustomerID, PaintingID, Price, Date) VALUES
+(10, 50, 7000.00, '2000-09-17'),
+(10, 65, 1800.00, '2000-11-05'),
+(10, 43, 5550.00, '2002-02-14'),
+(10, 65, 2200.00, '2003-07-15');
+
+/* a. Add 05 new customers to the database (customer numbers should below 10). */
+INSERT INTO Customer (FName, LName) VALUES
+('Jhon', 'Smith'),
+('Jack', 'Smith'),
+('Amal', 'Perera'),
+('George', 'Jackson'),
+('Pam', 'Roadster');
+
+/* b. Select all customers whose Customer Number is less than 05. */
+SELECT * FROM Customer WHERE ID < 5;
+
+/* c. Display painting IDs of paintings which sales price is between 1000 and 5000. */
+SELECT PaintingID FROM Purchases WHERE Price BETWEEN 1000.00 AND 5000.00;
+
+/* Delete the artist “Dennis Fringes”. */
+/* If we try to delete it normally we get a foreign key constraint */
+DELETE FROM Artist WHERE ID = 15;
+
+/* Add a constraint to tables that refer the to the artist */
+ALTER TABLE Painting
+  ADD CONSTRAINT `RemovePantingOnArtistDelete` FOREIGN KEY (ArtistID)
+  REFERENCES Artist(ID) ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE Purchases
+  ADD CONSTRAINT `RemovePurchaseOnPaintingDelete` FOREIGN KEY (PaintingID)
+  REFERENCES Painting(ID) ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE Sales
+  ADD CONSTRAINT `RemoveSalesOnPaintingDelete` FOREIGN KEY (PaintingID)
+  REFERENCES Painting(ID) ON UPDATE CASCADE ON DELETE CASCADE;
+
+/* Now we can finally delete the artist */
+DELETE FROM Artist WHERE ID = 15;
+
+/* e. Select paintings where purchase date<12/31/2002 and sales price>1500. */
+SELECT * FROM Purchases WHERE Date < '2002-12-31' AND Price > 1500.00;
