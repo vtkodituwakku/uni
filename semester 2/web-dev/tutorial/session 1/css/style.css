@@ -1,0 +1,17 @@
+#header {
+  border: 2px solid black;
+  text-align: center;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.top-spacing {
+  margin-top: 2vw;
+}

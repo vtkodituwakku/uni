@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Application Form</h1>
+      <h2>Position: Software Engineer</h2>
+    </div>
+
+    <form>
+      <table class="top-spacing">
+        <tr>
+          <td>
+            <label for="name">Name</label>
+          </td>
+
+          <td>
+            <input type="text" name="name" value="" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="birthday">Birthday</label>
+          </td>
+
+          <td>
+            <input type="date" name="birthday" value="" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="phoneNumber">Phone Number</label>
+          </td>
+
+          <td>
+            <input type="tel" name="phoneNumber" value="" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="gender">Gender</label>
+          </td>
+
+          <td>
+            <input type="radio" name="gender" value="M" />Male
+            <input type="radio" name="gender" value="F" />Female
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="edu">Highest level of education</label>
+          </td>
+
+          <td>
+            <select name="edu">
+              <option value="msc">Masters degree</option>
+              <option value="bsc">Bachelours degree</option>
+              <option value="al">A/L</option>
+              <option value="ol">O/L</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="cv">CV</label>
+          </td>
+
+          <td>
+            <input type="file" name="cv" value="" />
+          </td>
+        </tr>
+      </table>
+
+      <div id="footer">
+        <section class="top-spacing">
+          <input type="radio" name="terms" value="" /><a href=""
+            >I agree to the terms and conditions</a
+          >
+        </section>
+
+        <section class="top-spacing">
+          <input type="submit" name="submit" value="Login" />
+          <input type="reset" name="reset" value="clear" />
+        </section>
+      </div>
+    </form>
+  </body>
+</html>
