@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form name="someform">
+      Name: <input id="name" type="text" name="name" value="" />
+      <br />
+      Password: <input id="password" type="password" name="password" value="" />
+      <br />
+
+      <button type="button" onclick="onSubmit();">Submit</button>
+    </form>
+  </body>
+  <script>
+    function onSubmit() {
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+
+      if (name === "" || password == "") {
+        alert("Form is not complete");
+        return;
+      }
+
+      document.write(`The name is ${name}\nThe passwor is: ${password}`);
+      return;
+    }
+  </script>
+</html>

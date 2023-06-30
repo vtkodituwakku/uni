@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form name="log" id="log">
+      <label for="name">Name</label>
+      <input type="text" name="name" value="" />
+      <p id="error:name" style="color: red"></p>
+      <br />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" value="" />
+      <p id="error:password" style="color: red"></p>
+      <br />
+
+      <button type="button" onclick="onSubmit();">Submit</button>
+    </form>
+  </body>
+  <script>
+    function onSubmit() {
+      const name = document.log.name.value;
+      const nameError = document.getElementById("error:name");
+      if (name === "" || name.length <= 3 || name.length >= 100) {
+        nameError.innerText = "Name cannot be empty";
+      }
+    }
+  </script>
+</html>
