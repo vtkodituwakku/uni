@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form>
+      <div class="inputs">
+        <div>
+          <span class="feilds"
+            ><label for="username" id="username:label">Username</label>
+            <input type="text" name="username" value="" id="username:input"
+          /></span>
+          <p id="username:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds"
+            ><label for="password" id="password:label">Password</label>
+            <input type="password" name="password" value="" id="password:input"
+          /></span>
+          <p id="password:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds"
+            ><label for="confirmPassword" id="confirmPassword:label"
+              >Confirm password</label
+            >
+            <input
+              type="password"
+              name="confirmPassword"
+              value=""
+              id="confirmPassword:input"
+          /></span>
+          <p id="confirmPassword:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds"
+            ><label for="age" id="age:label">Age</label>
+            <input type="number" name="age" value="" id="age:input"
+          /></span>
+          <p id="age:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds"
+            ><label for="gender">Gender</label>
+            <span class="feilds"
+              ><input type="radio" name="gender" value="M" />Male
+              <input type="radio" name="gender" value="F" />Female</span
+            ></span
+          >
+          <p id="gender:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds"
+            ><label for="qualifications">Qualifications</label>
+            <span class="flex-col"
+              ><span class="feilds"
+                ><input type="checkbox" name="qualifications" value="al" />
+                <label>Advaced level</label></span
+              >
+              <span class="feilds"
+                ><input type="checkbox" name="qualifications" value="ol" />
+                <label>Ordinary Level</label></span
+              ></span
+            ></span
+          >
+          <p id="qualifications:error" class="err"></p>
+        </div>
+        <div>
+          <span class="feilds">
+            <label id="country:label" for="country">Country</label>
+            <select id="country">
+              <option value="s">Select your country</option>
+              <option value="sl">Sri Lanka</option>
+              <option value="us">United States of America</option>
+            </select>
+          </span>
+          <p id="country:error" class="err"></p>
+        </div>
+      </div>
+      <div class="controls">
+        <button type="reset" class="btn-red">Reset</button>
+        <button type="submit" class="btn-green">Submit</button>
+      </div>
+    </form>
+    <script src="js/validation.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
