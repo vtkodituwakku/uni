@@ -4,3 +4,6 @@
 [submodule "semester 2/web-dev/assignments/1"]
 	path = semester 2/web-dev/assignments/1
 	url = git@github.com:vtkodituwakku/web-dev-assignment-1.git
+[submodule "semester 2/java-lang/lab/Lab9-2023.07.06"]
+	path = semester 2/java-lang/lab/Lab9-2023.07.06
+	url = git@github.com:vtkodituwakku/Lab9-2023.07.06.git
